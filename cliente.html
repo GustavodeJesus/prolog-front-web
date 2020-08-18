@@ -26,7 +26,7 @@
                         <a class="nav-link" href="cliente.html">Cadastro Clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cadastro de Pedidos</a>
+                        <a class="nav-link" href="pedido.html">Cadastro de Pedidos</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
@@ -42,12 +42,12 @@
 
         <div class="form-group col-3">
             <label class="title-input" for="inputCodigo">Código</label>
-            <input type="number" class="form-control" id="inputCodigo">
+            <input type="number" autocomplete="no" class="form-control" id="inputCodigo">
         </div>
 
         <div class="form-group col-3">
             <label class="title-input" for="inputCodigoExterno">Código Externo</label>
-            <input type="number" class="form-control" id="inputCodigoExterno">
+            <input type="number" autocomplete="no" class="form-control" id="inputCodigoExterno">
         </div>
 
         <div class="form-group col-3">
@@ -126,7 +126,7 @@
             </div>
         </div>
 
-        <span class="border-bottom border-primary col-12 mt-4 mb-4"></span>
+        <span class="border-bottom col-12"></span>
 
         <div class="form-group col-10">
             <label class="title-input" for="inputEndereco">Endereço</label>
@@ -135,7 +135,7 @@
 
         <div class="form-group col-2">
             <label class="title-input" for="inputCep">CEP</label>
-            <input type="text" autocomplete="no" pattern="\d*" class="form-control" id="inputCep" maxlength="8"
+            <input type="number" autocomplete="no" pattern="\d*" class="form-control" id="inputCep" maxlength="8"
                    onkeyup="fetchCEP(this.value);">
         </div>
 
@@ -145,21 +145,21 @@
         </div>
         <div class="form-group col-6">
             <label class="title-input" for="inputCidade">Cidade</label>
-            <input type="text" class="form-control" id="inputCidade">
+            <input type="text" autocomplete="no" class="form-control" id="inputCidade">
         </div>
         <div class="form-group col-1">
             <label class="title-input" for="inputUf">UF</label>
             <input type="text" class="form-control" id="inputUf">
         </div>
 
-        <span class="border-bottom border-primary col-12 mt-4 mb-4"></span>
+        <span class="border-bottom col-12"></span>
 
         <div class="form-group col-12">
             <label class="title-input" for="inputObservacao">Observação</label>
             <textarea class="form-control" id="inputObservacao" rows="3"></textarea>
         </div>
 
-        <span class="border-bottom border-primary col-12 mt-4 mb-4"></span>
+        <span class="border-bottom col-12"></span>
 
         <div class="form-group mb-3 col-6">
             <label class="title-input" for="inputEmail">E-mail</label>
@@ -176,14 +176,14 @@
             <input type="number" class="form-control" id="inputTelefone">
         </div>
 
-        <div class="form-group mb-3 col-1">
+        <div class="form-group mb-3 col-3">
             <label class="title-input" for="inputContato">Contatolabel</label>
             <input type="text" class="form-control" id="inputContato">
         </div>
 
-        <span class="border-bottom border-primary col-12 mt-4 mb-4"></span>
+        <span class="border-bottom col-12"></span>
 
-        <div class="form-group mb-3 mt-3 col-12 d-flex justify-content-center">
+        <div class="form-group mb-3 mt-3  mt-auto col-12 d-flex justify-content-center">
             <button type="submit" class="btn btn-primary">Cadastrar Cliente</button>
         </div>
     </div>
