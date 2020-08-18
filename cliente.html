@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Clientes</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="container-fluid">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary navbar-fixed-top">
+            <a class="navbar-brand" href="#">ConfecSystem</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="cliente.html">Cadastro Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cadastro de Pedidos</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+      Um sistema de pedidos de confecções
+    </span>
+            </div>
+        </nav>
+    </div>
+</header>
+<form autocomplete="off" class="container container-cadastro-cliente">
+    <div class="row">
+        <h3 class="col-12 mt-5 mb-4">Cadastro de clientes</h3>
+
+        <div class="form-group col-3">
+            <label class="title-input" for="inputCodigo">Código</label>
+            <input type="number" class="form-control" id="inputCodigo">
+        </div>
+
+        <div class="form-group col-3">
+            <label class="title-input" for="inputCodigoExterno">Código Externo</label>
+            <input type="number" class="form-control" id="inputCodigoExterno">
+        </div>
+
+        <div class="form-group col-3">
+            <label class="title-input" for="inputDataCadastro">Cadastro</label>
+            <input type="date" class="form-control" id="inputDataCadastro">
+        </div>
+
+        <div class="form-group col-3">
+            <label class="title-input" for="inputDataAtualizacao">Atualização</label>
+            <input type="date" class="form-control" id="inputDataAtualizacao">
+        </div>
+
+        <div class="form-group col-12">
+            <label class="title-input" for="inputFantasia">Fantasia</label>
+            <input type="text" class="form-control" id="inputFantasia">
+        </div>
+
+        <div class="form-group col-9">
+            <label class="title-input" for="inputRazaoSocial">Razão Social</label>
+            <input type="text" class="form-control" id="inputRazaoSocial">
+        </div>
+
+
+        <div class="form-group col-3">
+            <div class="row">
+                <legend class="title-input col-form-label col-12 pt-0">Tipo Pessoa</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tipoPessoa" id="pessoaFisica"
+                               value="optionPessoaFisica"
+                               checked>
+                        <label class="form-check-label" for="pessoaFisica">
+                            Pessoa Física
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tipoPessoa" id="pessoaJuridica"
+                               value="optionPessoaJuridica">
+                        <label class="form-check-label" for="pessoaJuridica">
+                            Pessoa Jurídica
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-5">
+            <label class="title-input" for="inputCnpjCpf">CNPJ / CPF</label>
+            <input type="text" class="form-control" id="inputCnpjCpf">
+        </div>
+
+        <div class="form-group col-4">
+            <label class="title-input" for="inputInscEstadualRg">Inscrição Estadual / RG</label>
+            <input type="text" class="form-control" id="inputInscEstadualRg">
+        </div>
+
+
+        <div class="form-group col-3">
+            <div class="row">
+                <legend class="title-input col-form-label col-12 pt-0">Tipo Pessoa</legend>
+                <div class="col-sm-10">
+
+                    <div class="custom-control custom-checkbox custom-checkbox-color">
+                        <input type="checkbox" name="tipoPessoa"
+                               class="custom-control-input custom-control-input-color"
+                               id="inativo">
+                        <label class="custom-control-label" for="inativo">Inativo</label>
+                    </div>
+                    <div class="custom-control custom-checkbox custom-checkbox-color">
+                        <input type="checkbox" name="tipoPessoa"
+                               class="custom-control-input custom-control-input-color"
+                               id="semCredito">
+                        <label class="custom-control-label" for="semCredito">Sem Crédito</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <span class="border-bottom border-primary col-12 mt-4 mb-4"></span>
+
+        <div class="form-group col-10">
+            <label class="title-input" for="inputEndereco">Endereço</label>
+            <input type="text" class="form-control" id="inputEndereco">
+        </div>
+
+        <div class="form-group col-2">
+            <label class="title-input" for="inputCep">CEP</label>
+            <input type="text" autocomplete="no" pattern="\d*" class="form-control" id="inputCep" maxlength="8"
+                   onkeyup="fetchCEP(this.value);">
+        </div>
+
+        <div class="form-group col-5">
+            <label class="title-input" for="inputBairro">Bairro</label>
+            <input type="text" class="form-control" id="inputBairro">
+        </div>
+        <div class="form-group col-6">
+            <label class="title-input" for="inputCidade">Cidade</label>
+            <input type="text" class="form-control" id="inputCidade">
+        </div>
+        <div class="form-group col-1">
+            <label class="title-input" for="inputUf">UF</label>
+            <input type="text" class="form-control" id="inputUf">
+        </div>
+
+        <span class="border-bottom border-primary col-12 mt-4 mb-4"></span>
+
+        <div class="form-group col-12">
+            <label class="title-input" for="inputObservacao">Observação</label>
+            <textarea class="form-control" id="inputObservacao" rows="3"></textarea>
+        </div>
+
+        <span class="border-bottom border-primary col-12 mt-4 mb-4"></span>
+
+        <div class="form-group mb-3 col-6">
+            <label class="title-input" for="inputEmail">E-mail</label>
+            <input type="email" class="form-control" id="inputEmail">
+        </div>
+
+        <div class="form-group mb-3 col-1">
+            <label class="title-input" for="inputDdd">DDD</label>
+            <input type="number" class="form-control" id="inputDdd">
+        </div>
+
+        <div class="form-group mb-3 col-2">
+            <label class="title-input" for="inputTelefone">Telefone</label>
+            <input type="number" class="form-control" id="inputTelefone">
+        </div>
+
+        <div class="form-group mb-3 col-1">
+            <label class="title-input" for="inputContato">Contatolabel</label>
+            <input type="text" class="form-control" id="inputContato">
+        </div>
+
+        <span class="border-bottom border-primary col-12 mt-4 mb-4"></span>
+
+        <div class="form-group mb-3 mt-3 col-12 d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Cadastrar Cliente</button>
+        </div>
+    </div>
+
+</form>
+
+<div id="snackbar">CEP inválido!</div>
+
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/cliente.js"></script>
+</body>
+</html>
